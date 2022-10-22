@@ -1,0 +1,273 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<conio.h>
+
+void mainmenu(void);
+void customer(void);
+void food(void);
+void cdetails(void);
+
+int main()
+{
+    mainmenu();
+    return 0;
+}
+
+  /*  int choice;
+    int again;
+    int quantity;
+    double total=0;*/
+
+void mainmenu(void)
+{
+    system("cls");
+    printf("\t_________________________________________________________________________________\n");
+printf("\t\t\t WELCOME TO CAFETERIA MANAGEMENT SYSTEM\n");
+printf("\t1. Customer section-->\n\t2. EXIT-->\n\n\n\tEnter your choice-->");
+printf("\t___________________________________________________________\n");
+
+int select;
+scanf("%d",&select);
+if(select==1)
+{
+    customer();
+}
+else if(select==2)
+{
+    printf("aboutproject()");
+    if(getch());
+    mainmenu();
+}
+else if(select==3)
+{
+    system("cls");
+    printf("\n\n\n");
+    printf("\t\t\t\ Thankyou!!!!!\n");
+    printf("\t\t\t\ Feeling hungry?Grab your food\n");
+    printf("\t_______________________\n");
+    exit(0);
+}
+}
+
+void customer(void)
+{
+    system("cls");
+    printf("\t________________________________________\n");
+    printf("\t You are about to-->\n\t1. Order Snack\n\t2.View order\n\t3. Back to Main Menu\n\n\n\tEnter Your choice-->");
+
+    int c;
+    scanf("%d",&c);
+
+    int load;
+    for(load=0;load<=5000;load++)
+    {
+        printf("\rloading:%d",load/500);
+    }
+
+    if(c==1)
+    {
+        system("cls");
+        printf("food()"); 
+    }
+    else if(c==2)
+    {
+        system("cls");
+        printf("vieworder()");
+        if(getch())
+        customer();
+    }
+    else if(c==3)
+    {
+        system("cls");
+        mainmenu();
+        if(getch())
+        customer();
+    }
+
+    else
+    {
+        printf("\tWrong input.Please input correct details..\n\n");
+        customer();
+}
+}
+
+
+void food(void)
+{
+
+    printf("\t___________________________\n");
+    printf("\t\tFOOD MENU\n");
+    printf("\t______________________________________________\n");
+    printf("\tINPUT NUMBER FOR SELECTED MENU\n\n\t1 Lunch\n\n\t2 Snacks\n\n\t3 Beverage\n\n\t4 Back to Main Menu\n\n\t Enter your choice-->");
+    printf("\n\nInput Customer Order:");
+    printf("\n\n");
+    scanf("%d",&choice);
+
+    struct lunch{
+        char food[100];
+        int first,second,third,fourth,fifth;
+    };
+    struct lunch m[5];
+        void lunch_initialize()
+        {
+        strcpy(m[1].food,"Fried Rice");
+        m[1].first=35;
+        strcpy(m[2].food,"Fried Rice with gobi");
+        m[2].second=40;
+        strcpy(m[3].food,"Chapathi Curry/Palya");
+        m[3].third=35;
+        strcpy(m[4].food,"Veg meals");
+        m[4].fourth=45;
+        strcpy(m[5].food,"South Indian Thali");
+        m[5].fifth=40;
+    }
+    int main()
+    {
+        lunch_initialize();
+        printf("\t\t LUNCH\n1)%s\tRs.%d\n2)%s\tRs.%d\n3)%s\t\tRs.%d\n4)%s\tRs.%d\n5)%s\tRs.%d",
+        m[1].food,m[1].first,
+        m[2].food,m[2].second,
+        m[3].food,m[3].third,
+        m[4].food,m[4].fourth,
+        m[5].food,m[5].fifth);
+        return 0; 
+    }
+    struct snacks{
+        char item[50];
+        int one,two,three,four,five;
+    };
+    struct snacks a[5];
+    void snacks_initialize()
+    {
+        strcpy(a[1].item,"Samosa");
+        a[1].one=20;
+        strcpy(a[2].item,"Dilpasand");
+        a[2].two=25;
+        strcpy(a[3].item,"Veg puff");
+        a[3].three=20;
+        strcpy(a[4].item,"Cheese Roll");
+        a[4].four=60;
+        strcpy(a[5].item,"Corn Cheese Sandwich");
+        a[5].five=70;
+    }
+    
+        int main()
+    {
+        snacks_initialize();
+        printf("\t\t SNACKS\n1)%s\tRs.%d\n2)%s\tRs.%d\n3)%s\t\tRs.%d\n4)%s\tRs.%d\n5)%s\tRs.%d",
+        a[1].item,a[1].one,
+        a[2].item,a[2].two,
+        a[3].item,a[3].three,
+        a[4].item,a[4].four,
+        a[5].item,a[5].five);
+        return 0;
+    }
+    struct beverages{
+        char foit[50];
+        int o,t,th,f,fi;
+    }
+    struct beverages b[5];
+    void beverage_initialize()
+    {
+        strcpy(b[1].foit,"Chocolate Milkshake");
+        b[1].o=50;
+        strcpy(b[2].foit,"Cold Coffee");
+        b[2].t=25;
+        strcpy(b[3].foit,"Tea");
+        b[3].th=20;
+        strcpy(b[4].foit,"Horlicks");
+        b[4].f=30;
+        strcpy(b[5].foit,"Rose Milkshake");
+        b[5].fi=50;
+    }
+    
+        int main()
+    {
+        beverage_initialize();
+        printf("\t\t BEVERAGE\n1)%s\tRs.%d\n2) %s\tRs.%d\n3) %s\t\tRs.%d\n4)%s\tRs.%d\n5)%s\tRs.%d",
+        b[1].foit,b[1].o,
+        b[2].foit,b[2].t,
+        b[3].foit,b[3].th,
+        b[4].foit,b[4].f,
+        b[5].foit,b[5].fi);
+        return 0;
+
+
+    if(choice==1)
+    {
+        printf("Quantity:");
+        scanf("%d",&quantity);
+        total=total+50*(quantity);
+        printf("\n");
+        printf("Press 1 to order.Again:\n\t Press 2 To get your Total:\n\n\n\tENTER YOUR CHOICE");
+        scanf("%d",&again);
+        printf("\n");
+        if (again==1)
+        {
+            printf("\n\n");
+            food();
+        }
+        else if(again==2)
+        printf("Your Total Amount is:%.2f\n\n",total);
+
+        int total=total;
+        fprintf("\t\n Grand Total:%d\n",total);
+        food();
+    }
+    else if (choice==3)
+    {
+    system("cls");
+    customer();
+    }
+    else 
+    {
+    printf("\tWrong input!Kindly input the corrext option..\n\n");
+    if(getch())
+    food();
+    }
+}
+ 
+ void cdetails(void)
+ {
+    char fname[20];
+    char lname[20];
+    long long int phone;
+
+    printf("\tInput customer details\n");
+    printf("First Name:");
+    scanf("%s",&fname);
+    printf("Last Name:");
+    scanf("%s",&lname);
+    printf("Phone:");
+    scanf("%lld",&phone);
+    printf("\n\n");
+    printf("Your Details Entered are:-->\n");
+
+    FILE*cust;
+    cust=fopen("order.text","a");
+    fprintf(cust,"Order by:%s %s\nPhone Number:%lld\n",fname,lname,phone );
+    fclose(cust);
+    printf("-->First Name:%s\n-->Last name:%s\n-->Phone:%lld\n",fname,lname,phone);
+    printf("\n\n\n");
+    printf("\t______________________________________________\n");
+    printf("\t\t Your order will be in 10 mins..\n");
+    printf("\t\t Thankyou..\n");
+    printf("\t____________________________________________");
+    printf("Press any key to main menu");
+    if(getch())
+    mainmenu();
+ }
+}
+
+
+
+
+ 
+ 
+ 
+
+
+
+
+        
